@@ -23,16 +23,15 @@
 		<form id="createEvent" class="create-event" name="inputForm" method="POST" action="<c:out value="${createEventUrl}"/>" onsubmit="return validateForm();">
 			<input type="hidden" name="calendarId" value="<ww:property value="calendarId"/>"/>
 
-
 			<input type="hidden" name="mode" value="<ww:property value='mode'/>"/>
 			<input type="hidden" name="date" value="<ww:property value='date'/>"/>
 			<input type="hidden" name="time" value="<ww:property value='time'/>"/>
-			
+
 			<fieldset>
 				<legend class="arrow-up"><ww:property value="this.getLabel('labels.internal.event.baseInfoHeader')"/></legend>  
 				<section style="display:block">
-				
-					<%-- Language --%> 
+
+					<%-- Language --%>
 					<ww:if test="this.getLabel('labels.internal.event.languageInfo') != 'labels.internal.event.languageInfo'">					
 						<a class="inputLink" href="#" onclick="return false;" onclick="return false;">
 							<img class="infocon" src="<%=request.getContextPath()%>/images/infoicon.png" />
@@ -412,7 +411,7 @@
     		return false;
     	}
         
-    	if (!document.inputForm.agree.checked) 
+    	if (!document.inputForm.agree.checked)
 		{
 			document.inputForm.agree.focus();
 			alert("<ww:property value="this.getLabel('labels.internal.event.confirmationRequiredMessage')"/>");
@@ -427,7 +426,7 @@
     	var match 		= myRegexp.test(aTimeString);
     	return match;
     }
-	
+
 	function completeTime(textfield)
     {
     	if(textfield.value.length == 2)
@@ -435,7 +434,7 @@
     		textfield.value = textfield.value + ":00";
     	}
     }
-	
+
 	<%-- Validate form --%>
     function validateForm() {
     	document.inputForm.title.value = document.inputForm.name.value;
@@ -494,7 +493,7 @@
         button         :    "lastRegistrationDateTime",   <%-- trigger for the calendar (button ID) --%>
         align          :    "BR",            <%-- alignment (defaults to "Bl") --%>
         singleClick    :    true,
-        firstDay  	   : 	1    
+        firstDay  	   : 	1
     });
 </script>
 

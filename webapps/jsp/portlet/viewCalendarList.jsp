@@ -67,12 +67,11 @@
         <ww:else>
             <div class="evenrow">
         </ww:else>
-		
 		<a href="<c:out value="${calendarUrl}"/>" title="<ww:property value="this.getParameterizedLabel('labels.internal.general.list.title', name)"/>">
             <div class="columnLong">
-                <p class="portletHeadline">
-					<ww:property value="name"/>
-				</p>
+		<p class="portletHeadline">
+			<ww:property value="name"/>
+		</p>
             </div>
             <div class="columnMedium">
                 <p><ww:property value="description"/></p>

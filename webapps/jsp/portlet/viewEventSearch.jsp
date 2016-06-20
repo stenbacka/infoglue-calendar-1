@@ -121,7 +121,7 @@
         </c:if>
         <c:choose>
             <c:when test="${numberOfItems != -1}">
-                <calendar:slots visibleElementsId="eventsItems" visibleSlotsId="indices" lastSlotId="lastSlot" elements="${eventList}" currentSlot="${currentSlot}" slotSize="${numberOfItems}" slotCount="10"/>
+                <calendar:slots visibleElementsId="eventsItems" visibleSlotsId="indices" lastSlotId="lastSlot" elements="${eventList}" currentSlot="${currentSlot}" slotSize="2" slotCount="10"/> <%-- ${numberOfItems} --%>
             </c:when>
             <c:otherwise>
                 <c:set var="eventsItems" value="${eventList}"/>

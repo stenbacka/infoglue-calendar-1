@@ -1,3 +1,5 @@
+<%@page import="org.infoglue.calendar.actions.ViewCalendarAdministrationAction"%>
+<%@page import="com.opensymphony.xwork.ActionContext"%>
 <%@ taglib uri="webwork" prefix="ww" %>
 <%@ taglib uri="http://java.sun.com/portlet" prefix="portlet"%>
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
@@ -18,22 +20,22 @@
 				<style type="text/css" media="screen">@import url(/infoglueCalendar/css/calendarPortlet.css);</style>
 			</ww:else>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
-			
+
 			<link rel="stylesheet" type="text/css" media="all" href="<%=request.getContextPath()%>/applications/jscalendar/skins/aqua/theme.css" title="aqua" />
 			<link rel="stylesheet" type="text/css" media="all" href="<%=request.getContextPath()%>/applications/jscalendar/calendar-system.css" title="system" />
 
 			<script type="text/javascript" src="<%=request.getContextPath()%>/script/dom-drag.js"></script>
 			<script type="text/javascript" src="<%=request.getContextPath()%>/script/infoglueCalendar.js"></script>
 			<script type="text/javascript" src="<%=request.getContextPath()%>/applications/ckeditor/ckeditor.js"></script>
-			
+
 			<script type="text/javascript">
-			
+
 				function linkEvent(calendarId)
 				{
 					document.getElementById("calendarId").value = calendarId;
 					document.linkForm.submit();
 				}
-			
+		
 				function createEventFromCopy(action)
 				{
 					document.updateForm.action = action;
@@ -45,7 +47,7 @@
 					document.deleteResourceForm.resourceId.value = resourceId;
 					document.deleteResourceForm.submit();
 				} 
-			
+
 				function includeScript(url)
 				{
 				  document.write('<script type="text/javascript" src="' + url + '"></scr' + 'ipt>'); 
