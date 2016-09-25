@@ -51,7 +51,17 @@
     <c:set var="eventsItems" value="${eventList}"/>
     <ww:if test="events != null && events.size() > 0">
         <ww:set name="numberOfItems" value="numberOfItems" scope="page"/>
-
+        <%
+			try
+			{
+				String numberOfItems = (String)pageContext.getAttribute("numberOfItems");
+				pageContext.setAttribute("numberOfItems", Integer.parseInt(numberOfItems));
+			}
+			catch (Exception ex)
+			{
+				pageContext.setAttribute("numberOfItems", 10);
+			}
+        %>
         <c:set var="currentSlot" value="${param.currentSlot}"/>
         <c:if test="${currentSlot == null}">
             <c:set var="currentSlot" value="1"/>
